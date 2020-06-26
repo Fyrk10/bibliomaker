@@ -220,11 +220,12 @@
 
           var fs = require('fs');
 
-          fs.writeFile('bibli.json', pauteur, (err) => {
+          fs.writeFile('save/bibli.json', save, (err) => {
             if(err){
               alert("Une erreur s'est produite"+ err.message)
             }     
               //alert("Fichier sauvagardé avec succès");
+
             });
           }); 
 
