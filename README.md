@@ -1,12 +1,17 @@
-# Biblio-maker 1.0.0
+# Biblio-maker 0.2.0 (Beta)
 
 ## How to build biblio-maker ?
 
-### Install depedencies
+1. Clone the github repos:
+git clone https://github.com/Dyke10/bibliomaker.git
 
-npm install electron
+### Install dependencies
 
-npm install quill
+1. npm install electron
 
+2. npm install quill
 
+Start the project:
+
+npm start
 
