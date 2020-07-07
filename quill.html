@@ -1,4 +1,4 @@
-<html>
+<!--<html>
 <head>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
@@ -48,4 +48,35 @@ console.log(users);
 </div>
 
 </body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <Script>
+    const person  = {
+      name: "Dom",
+      age: 46,
+      toJSON() {
+        return `This is ${this.name} and they are ${this.age} years old !`;
+      }
+    };
+
+
+    const dataobj = {
+      data: person
+    };
+
+    console.log(JSON.stringify(dataobj));
+
+
+
+  </Script>
+</body>
+
 </html>

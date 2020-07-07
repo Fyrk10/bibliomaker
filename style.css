@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+#form, #results, #info,.div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  font-family: 'proxima-nova';
+}
+
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -11,6 +18,17 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+  }
+
+  input[type=text]:focus {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
   }
   
   input[type=submit] {
@@ -27,14 +45,8 @@ input[type=text], select {
   input[type=submit]:hover {
     background-color: #45a049;
   }
-  
-  #form, #results, #info,.div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
 
-  #OR, #oui {
+  #OR {
     border-radius: 5px;
     background-color: white;
     padding: 20px;

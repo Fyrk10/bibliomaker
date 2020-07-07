@@ -16,7 +16,7 @@ app.on('ready', function(){
     // creation nouvelle fenetre
     mainWindow = new BrowserWindow(
         {
-            width: 1280,
+            width: 1300,
             height: 720,
             minWidth: 175,
 		    minHeight: 250,
