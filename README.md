@@ -1,12 +1,6 @@
 # Biblio-maker 0.2.0 (Developper Beta)
 
-<img src="https://raw.githubusercontent.com/Dyke10/bibliomaker/master/icon.png">
-
-<style>
-    img{
-        width: 19%;
-    }
-</style>
+<img src="https://raw.githubusercontent.com/Dyke10/bibliomaker/master/icon.png" width=18%>
 
 ## How to build biblio-maker ?
 

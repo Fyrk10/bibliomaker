@@ -13,7 +13,7 @@ let preferences;
 
 // Attendre que lapp soit prete
 app.on('ready', function(){
-    // creation nouvelle fenetre
+    // creation nouvelle fenêtre
     mainWindow = new BrowserWindow(
         {
             width: 1300,
@@ -44,7 +44,7 @@ app.on('ready', function(){
 
 // create addwindow
 function createAddWindow(){
-    // creation nouvelle fenetre
+    // creation nouvelle fenêtre
     addWindow = new BrowserWindow(
         {
             width: 300,
@@ -55,7 +55,7 @@ function createAddWindow(){
         }
     );
         
-    //html dans la fenetre
+    //html dans la fenêtre
     addWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'addwindow.html'),
         protocol:'file',
@@ -70,33 +70,30 @@ function createAddWindow(){
 
 // create information
 function createinformation(){
-    // creation nouvelle fenetre
+
     information = new BrowserWindow(
         {
-            width: 400,
-            height: 200,
+            width: 550,
+            height: 350,
             title:'ajouter',
             
             webPreferences: {nodeIntegration: true}
         }
     );
-        
-    //html dans la fenetre
+
     information.loadURL(url.format({
         pathname: path.join(__dirname, 'information.html'),
         protocol:'file',
         slashes: true
     }));
 
-    // garbage collection
     information.on('close', function(){
         information = null;
     });
 }
 
-// create preferences
 function createpreferences(){
-    // creation nouvelle fenetre
+
     preferences = new BrowserWindow(
         {
             width: 400,
@@ -107,14 +104,12 @@ function createpreferences(){
         }
     );
         
-    //html dans la fenetre
     preferences.loadURL(url.format({
         pathname: path.join(__dirname, 'preferences.html'),
         protocol:'file',
         slashes: true
     }));
 
-    // garbage collection
     preferences.on('close', function(){
         preferences = null;
     });
@@ -154,12 +149,12 @@ const mainMenuTemplate = [
     }
 ];
 
-// si mac, rajouter un truc pour quil voit la section file
+// si mac, ajouter un truc pour quil voit la section file
 if(process.platform == 'darwin'){
     mainMenuTemplate.unshift({});
 }
 
-// ajouter outil devollopeur si pas en prod
+// ajouter outil dévellopeur, si pas en prod
 if(process.env.NODE_ENV !== 'production'){
     mainMenuTemplate.push({
         label: 'Outils developpeurs',
@@ -177,6 +172,3 @@ if(process.env.NODE_ENV !== 'production'){
         ]
     });
 }
-
-
-
