@@ -111,3 +111,21 @@ input[type=text], select {
     transition: 0.3s;
     font-size: 12px;
   }
+
+  /*EDITOR CSS*/
+  .del {
+    background-color: lightgray;
+    color: black;
+    float: inline-end;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 10px;
+    transition: 0.3s;
+    font-size: 12px;
+  }
+
+  .del:hover {
+    background-color: darkgray;
+  }
