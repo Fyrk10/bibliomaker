@@ -96,8 +96,8 @@ function createpreferences(){
 
     preferences = new BrowserWindow(
         {
-            width: 400,
-            height: 300,
+            width: 600,
+            height: 450,
             title:'ajouter',
             
             webPreferences: {nodeIntegration: true}

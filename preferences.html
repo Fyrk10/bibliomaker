@@ -7,19 +7,32 @@
     </head>
 
     <body>
-        <div id="info"> 
-            <p>Darkmode, Lightmode</p>
-        </div>
-        <input type = text></input>
+
+        <label>Choix du thème</label>
+          <div class="box">
+            <select>
+              <option>Default</option>
+              <option>Darkmode</option>
+              <option>Lightmode</option>
+              <option>Green</option>
+              <option>pink</option>
+            </select>
+          </div>
+
+
+
+
+        </form>
 
 
         <script>
 
               //TO DO
-              // 1 parse data from json, output to form info
-              // 2 make form with html
-              // 3 save form data to js array
-              // 4 stringify to json
+              // 1 parse data from json
+              // 2 output data to form info
+              // 3 make form with html
+              // 4 save form data to js array
+              // 5 stringify to json
             var fs = require('fs');
 
             fs.readFile('save/preferences.json', handleFile) //get preferences
