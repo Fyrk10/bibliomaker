@@ -33,16 +33,30 @@
   
             var pauteur = $("#pauteur").val();
             var nauteur = $("#nauteur").val();
+            var etal = $("#etal").val();
             var titre = $("#titre").val();
             var ville = $("#ville").val();
             var org = $("#org").val();
             var annee = $("#annee").val();
             var pages = $("#pages").val();
+                  
+          if (pauteur != "" && document.getElementById("etal").checked == true){
+            //pauteur = pauteur.toLowerCase();
+            pauteur = pauteur.charAt(0).toUpperCase() + pauteur.slice(1);
+            pauteur = pauteur + ", ";
+            etal = "et al";
+            var etal2 = ". "
+          }
   
-          if (pauteur != ""){
-          //pauteur = pauteur.toLowerCase();
-          pauteur = pauteur.charAt(0).toUpperCase() + pauteur.slice(1);
-          pauteur = pauteur + ". ";
+          if (pauteur != "" && document.getElementById("etal").checked == false){
+            //pauteur = pauteur.toLowerCase();
+            pauteur = pauteur.charAt(0).toUpperCase() + pauteur.slice(1);
+            pauteur = pauteur + ". ";
+            etal = "";
+          }
+
+          if (pauteur == ""){
+            etal = "";
           }
   
           if (nauteur != ""){
@@ -68,9 +82,13 @@
           if (pages != ""){
             pages = (pages + " p.");
           }
+
+          console.log(etal);
   
             quill.setContents([ // affichage de l'output
               { insert: nauteur + pauteur },
+              { insert: etal, attributes: { underline: true } },
+              { insert: etal2 },
               { insert: titre, attributes: { italic: true } },
               { insert: ville + org + annee + pages }
             ]);
@@ -89,7 +107,7 @@
                 var ref = {};
 
                 ref.type = 0;
-                ref.etal = false;
+                ref.etal = etal;
                 ref.pauteur = pauteur;
                 ref.nauteur = nauteur;
                 ref.titre = titre;
@@ -127,3 +145,15 @@
             document.execCommand("copy");
             document.removeEventListener("copy", listener);
           };
+
+        function checkbox(checkbox1){
+
+          if(checkbox1.checked){
+            var etal = 1
+          }
+          else{
+            etal = 0
+          }
+
+          return etal
+        }
