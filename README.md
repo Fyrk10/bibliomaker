@@ -22,7 +22,7 @@ Start the project:
 ```bash
 npm start
 ```
-Build the project
+Build the project (windows)
 ```bash
 npm run build
 ```
@@ -48,7 +48,7 @@ Démarrez le projet
 ```bash
 npm start
 ```
-Construire le projet
+Construire le projet (windows)
 ```bash
 npm run build
 ```
