@@ -1,1 +1,5 @@
-[{"string0": "allo"}, {"string1": "hi"}]
+[{"ref":{"type":0,"etal":false,"pauteur":"","nauteur":"","titre":"","ville":"","org":"","annne":"","pages":""}}
+
+,{"THIS IS AN EXAMPLE FILE":""}
+
+]
