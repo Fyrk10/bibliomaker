@@ -1,16 +1,22 @@
 {
   "name": "biblio-maker",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Programme permettant de créer formatter des sources, selon les normes du Programme d'étude International (PEI)",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=icon.png --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Biblio-maker\"",    
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=icon.png --prune=true --out=release-builds"
   },
   "author": "Dyke10",
   "license": "ISC",
   "dependencies": {
     "electron": "^9.0.4",
     "quill": "^1.3.7"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.0.0"
   }
 }
