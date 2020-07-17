@@ -28,46 +28,55 @@ $("#fform").submit(function (event) {
   //https://www.youtube.com/watch?v=f3Auvf9pN6s THX JQUERY
   event.preventDefault(); //YES
 
-  let pauteur = $("#pauteur").val();
-  let nauteur = $("#nauteur").val();
-  let etal = $("#etal").val();
-  let titre = $("#titre").val();
-  let ville = $("#ville").val();
-  let org = $("#org").val();
-  let annee = $("#annee").val();
-  let pages = $("#pages").val();
-  let etal2 = "";
-  let etalCheck = false;
-  let auteurLength = ($('.auteur').length) / 2;
+let auteurLength = ($('.auteur').length) / 2;
 
+let etal = $("#etal").val();
+let titre = $("#titre").val();
+let ville = $("#ville").val();
+let org = $("#org").val();
+let annee = $("#annee").val();
+let pages = $("#pages").val();
+let etal2 = "";
+let etalCheck = false;
 
-    
+var pauteur = [];
+var nauteur = [];
 
+for(i = 0; i < auteurLength; i++){
+    pauteur[i] = $("#pauteur" + i).val();
+    nauteur[i] = $("#nauteur" + i).val();
 
-  if (pauteur != "" && document.getElementById("etal").checked == true) {
+    console.log(pauteur, nauteur, auteurLength);
+
+    //need to rewrite below (in for loop)
+    //then rearrange for output
+
+  if (pauteur[i] != "" && document.getElementById("etal").checked == true) {
     //pauteur = pauteur.toLowerCase();
-    pauteur = pauteur.charAt(0).toUpperCase() + pauteur.slice(1);
-    pauteur = pauteur + ", ";
+    pauteur[i] = pauteur[i].charAt(0).toUpperCase() + pauteur[i].slice(1);
+    pauteur[i] = pauteur[i] + ", ";
     etal = "et al";
     etal2 = ". ";
     etalCheck = true;
   }
 
-  if (pauteur != "" && document.getElementById("etal").checked == false) {
+  if (pauteur[i] != "" && document.getElementById("etal").checked == false) {
     //pauteur = pauteur.toLowerCase();
-    pauteur = pauteur.charAt(0).toUpperCase() + pauteur.slice(1);
-    pauteur = pauteur + ". ";
+    pauteur[i] = pauteur[i].charAt(0).toUpperCase() + pauteur[i].slice(1);
+    pauteur[i] = pauteur[i] + ". ";
     etal = "";
-    etalCheck= false;
+    etalCheck = false;
   }
 
-  if (pauteur == "") {
+  if (pauteur[i] == "") {
     etal = "";
   }
 
-  if (nauteur != "") {
-    nauteur = (nauteur + ", ").toUpperCase();
+  if (nauteur[i] != "") {
+    nauteur[i] = (nauteur[i] + ", ").toUpperCase();
   }
+
+}
 
   if (titre != "") {
     titre = titre + ", ";
@@ -112,22 +121,22 @@ $("#fform").submit(function (event) {
     save = JSON.parse(data);
 
     var ref = {};
-    ref.auteur = [];
+    var auteurs = {};
+    for(i = 0; i < auteurLength; i++){
+      auteurs["pauteur" + i] = pauteur;
+      auteurs["nauteur" + i] = nauteur;
 
-    ref.auteur.pauteur = pauteur;
-    ref.auteur.nauteur = nauteur;
-
+    }
+    
     ref.type = 0;
     ref.etal = etalCheck;
     ref.auteurLength = auteurLength;
+    ref.auteurs = auteurs;
     ref.titre = titre;
     ref.ville = ville;
     ref.org = org;
     ref.annne = annee;
     ref.pages = pages;
-
-    ref.auteur.push({auteurs: ref.auteur});
-
 
     save.push({ ref: ref });
 
@@ -158,7 +167,7 @@ function copyToClip(str) {
 
 function addAuteur() {
   let length = (($('.auteur').length) / 2);
-  $(".ajouterPN").append('<table id="PN' + length + '" style="width:100%"><tr><td class="PN">Prénom</td><td><input type="text" id="pauteur" name="pauteur" class="auteur" placeholder="Ex: Paul"></td> </tr><tr><td class="PN">Nom</td><td><input type="text" id="nauteur" name="nauteur" class="auteur" placeholder="Ex: Aubin"></td></tr></table>');
+  $(".ajouterPN").append('<table id="PN' + length + '" style="width:100%"><tr><td class="PN">Prénom</td><td><input type="text" id="pauteur' + length + '" name="pauteur" class="auteur" placeholder="Ex: Paul"></td> </tr><tr><td class="PN">Nom</td><td><input type="text" id="nauteur' + length +'" name="nauteur" class="auteur" placeholder="Ex: Aubin"></td></tr></table>');
   console.log(length);
 }
 
