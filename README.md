@@ -10,7 +10,7 @@ https://www.npmjs.com/get-npm (intall nodejs and npm)
 
 Clone the github repos:
 ```bash
-git clone https://github.com/Dyke10/bibliomaker.gitgi
+git clone https://github.com/Dyke10/bibliomaker.git
 ```
 
 Install dependencies:
@@ -28,7 +28,7 @@ Build the project (windows)
 ```bash
 npm run build
 ```
-### Then move the save folder in build folder
+### Then move the save folder in the build folder
 <br></br>
 
 ## Comment constuire bibliomaker ?

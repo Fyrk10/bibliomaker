@@ -3,14 +3,14 @@
     padding: 0;
 }
 
-#form, #results, #info,.div {
+#form, #results, #info, .div {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
   font-family: 'proxima-nova';
 }
 
-input[type=text], select {
+.text, select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -20,7 +20,7 @@ input[type=text], select {
     box-sizing: border-box;
   }
 
-  input[type=text]:focus {
+  .text:focus {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -29,6 +29,27 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
     outline: none;
+  }
+
+  .auteur {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 1px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .auteur:focus {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 1px 0;
+    display: inline-block;
+    border: none;
+    border-radius: none;
+    box-sizing: border-box;
+    outline-color: #4CAF50;
   }
   
   input[type=submit] {
@@ -74,7 +95,7 @@ input[type=text], select {
   }
   
   /* Change background color of buttons on hover */
-  .tab button:hover, #copy:hover {
+  .tab button:hover, .copy:hover {
     background-color: #cacaca;
   }
   
@@ -98,7 +119,7 @@ input[type=text], select {
   }
 
   /*bouton copier */
-  #copy {
+  .copy {
     background-color: #94D196;
     color: black;
     float: inline-end;
@@ -128,4 +149,19 @@ input[type=text], select {
 
   .del:hover {
     background-color: darkgray;
+  }
+
+  table, td {
+    padding: 8px 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+
+  }
+  td {
+    padding: 0px;
+  }
+
+  .PN {
+    width: 90px;
+    padding: 8px 30px;
   }

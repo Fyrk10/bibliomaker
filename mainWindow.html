@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Biblio-Maker 0.2.0 (Developper Beta)</title>
+
   </head>
 
   <body>
@@ -43,44 +44,54 @@
       <label id="ori">
       <span id="editor">Ex: AUBIN, Paul. <em>Bibliographie de l'histoire du Québec et du Canada 1966-1975</em>, 2 vol., Québec, Institut québécois de recherche sur la culture, 1981, 1430 p.</span>
       </label>
-      <button id="copy" onclick="copyToClip(document.getElementById('ori').innerHTML)">Copier <i class="fa fa-copy"></i></button>
+      <button class="copy" onclick="copyToClip(document.getElementById('ori').innerHTML)">Copier <i class="fa fa-copy"></i></button>
     </div>
 
     <form id="fform" name="bForm" action="" method="GET">
+ 
       <div id="form">
-        <label>Pr/nom de lauteur</label>
-        <input type="text" id="pauteur" name="pauteur" placeholder="Ex: paul">
-      </div>
+        <div id="form">
+          <label>Auteur(s)</label><input type="checkbox" id="etal">
 
-      <div id="form">
-        <label>Nom de l'auteur // Plusieurs auteurs</label>
-        <input type="checkbox" name="etal" id="etal" value="1">
-        <input type="text" id="nauteur" name="nauteur" placeholder="Ex: aubin">
-      </div>
+            <table style="width:100%">
+              <tr>
+                <td class="PN">Prénom</td>
+                <td><input type="text" id="pauteur0" name="pauteur" class="auteur" placeholder="Ex: Paul"></td> 
+              </tr>
+              <tr>
+                <td class="PN">Nom</td>
+                <td><input type="text" id="nauteur0" name="nauteur" class="auteur" placeholder="Ex: Aubin"></td>
+              </tr>
+            </table>
+            <div class="ajouterPN"></div>
+
+            <input type="button" class="copy" value="Ajouter un auteur" onclick="addAuteur()">
+            <input type="button" class="copy" value="Enlever" onclick="removeAuteur()"> 
+        </div>
 
       <div id="form">
         <label>Titre de l'ouvrage</label>
-        <input type="text" id="titre" name="titre" placeholder="Ex: Bibliographie de l'histoire du Québec et du Canada 1966-1975">
+        <input type="text" id="titre" name="titre" class="text" placeholder="Ex: Bibliographie de l'histoire du Québec et du Canada 1966-1975">
       </div>
 
       <div id="form">
         <label>Ville de provenance</label>
-        <input type="text" id="ville" name="ville" placeholder="Ex: Québec">
+        <input type="text" id="ville" name="ville" class="text" placeholder="Ex: Québec">
       </div>
 
       <div id="form">
         <label>Maison d'édition</label>
-        <input type="text" id="org" name="org" placeholder="Ex: Institut québécois de recherche sur la culture">
+        <input type="text" id="org" name="org" class="text" placeholder="Ex: Institut québécois de recherche sur la culture">
       </div>
 
       <div id="form">
         <label>Année de publication</label>
-        <input type="text" id="annee" name="annee" placeholder="Ex: 1981">
+        <input type="text" id="annee" name="annee" class="text" placeholder="Ex: 1981">
       </div>
       
       <div id="form">
         <label>Nombre de pages</label>
-        <input type="text" id="pages" name="pages" placeholder="Ex: 1430">
+        <input type="text" id="pages" name="pages" class="text" placeholder="Ex: 1430">
       </div>
 
       <input id="bouton" type="submit" onclick="" value="Soumettre">
