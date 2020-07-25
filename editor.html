@@ -19,21 +19,28 @@
         </div>
 
         <script>
+                // get values from bibli.json an put in an array
+                var fs = require('fs');
+                var currentEditor; // selected / focused editor
 
-            var currentEditor; // selected / focused editor
-            var array = ["allo", "bonjour", "oui", "non", "peutetre", "Dyke10"]
+                let save = fs.readFileSync('save/editor.json'); // synchronous to load configuration before executing any code, asynchronous dont work
+                let array = JSON.parse(save);
 
-            for(i = 0; i < array.length; i++){
+                draw(array);
 
-            $("#window").append('<div><span id="editor' + i + '">' + array[i] + '</span><button id="remove' + i + '"class="del"><i class="fa fa-remove"></i></button><button id="trash' + i + '"class="del"><i class="fa fa-trash"></i></button></div>');
-            createEditor("#editor" + i);
+                function draw(array){
 
-            }
+                    for(i = 0; i < array.length; i++){
 
-            array.splice(i, 1);
+                    $("#window").append('<div><span id="editor' + i + '">' + array[i] + '</span><button id="edit' + i + '"class="del"><i class="fa fa-edit"></i></button><button id="remove' + i + '"class="del" onclick="removes(' + i + ')"><i class="fa fa-remove"></i></button><button id="trash' + i + '"class="del"><i class="fa fa-trash"></i></button></div>');
+                    createEditor("#editor" + i);
+
+                    }
+                }
 
 
-            function createEditor(selector) //https://github.com/quilljs/quill/issues/633
+
+            function createEditor(selector) // https://github.com/quilljs/quill/issues/633
             {
                 let quill = new Quill(selector, {
                     modules: {
@@ -45,8 +52,14 @@
                     currentEditor = quill;
                 });
             }
-              
+
+            function removes(current) {
+                console.log(array);
+                array.splice(current,1)
+                console.log(array);
+                fs.writeFileSync('save/editor.json', JSON.stringify(array))
+                window.location.reload();
+            }
         </script>
-    
     </body>
 </html>

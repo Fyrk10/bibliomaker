@@ -1,0 +1,31 @@
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+	background-color: #94D196;
+	/*padding: 20px 20px;*/
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+	  display: inline-block;
+    background-color: pink;
+    color: white;
+    float: left;
+    border: none;
+    outline: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+	font-size: 17px;
+	top: 50%;
+  }
+  .active {
+	padding: 24px 26px;
+	display:inline-block;
+	height: 100%;
+	top: 10px;
+	left: 0px;
+	background-color: pink;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+
+  }
