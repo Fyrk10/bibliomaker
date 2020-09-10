@@ -10,7 +10,7 @@
 	  display: inline-block;
     background-color: pink;
     color: white;
-    float: left;
+    /* float: left; */
     border: none;
     outline: 5px;
     cursor: pointer;

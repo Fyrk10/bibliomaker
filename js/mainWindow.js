@@ -36,6 +36,7 @@ let ville = $("#ville").val();
 let org = $("#org").val();
 let annee = $("#annee").val();
 let pages = $("#pages").val();
+let complete = $(".p").val();
 let etal2 = "";
 let etalCheck = false;
 
@@ -114,7 +115,7 @@ for(i = 0; i < auteurLength; i++){
 
   /*SAVE SYSTEM*/
 
-  fs.readFile("save/bibli.json", handleFile); //get preferences
+  fs.readFile("save/bibli.json", handleFile); //get array
 
   function handleFile(err, data) {
     if (err) throw err;
@@ -123,8 +124,8 @@ for(i = 0; i < auteurLength; i++){
     var ref = {};
     var auteurs = {};
     for(i = 0; i < auteurLength; i++){
-      auteurs["pauteur" + i] = pauteur;
-      auteurs["nauteur" + i] = nauteur;
+      auteurs["pauteur" + i] = pauteur[i];
+      auteurs["nauteur" + i] = nauteur[i];
 
     }
     
@@ -137,6 +138,7 @@ for(i = 0; i < auteurLength; i++){
     ref.org = org;
     ref.annne = annee;
     ref.pages = pages;
+    ref.complete = complete;
 
     save.push({ ref: ref });
 
