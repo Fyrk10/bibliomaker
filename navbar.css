@@ -1,31 +1,75 @@
+.border {
+  width: 100%;
+  height: 5px;
+  background-color: #94D196;
+}
+
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
+    border: 0px solid #94D196;
 	background-color: #94D196;
 	/*padding: 20px 20px;*/
   }
   
   /* Style the buttons inside the tab */
-  .tab button {
-	  display: inline-block;
+  .tab .tabs {
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 45px;
+    display: block;
+    padding: 0px 20px;
+    position: relative;
+    float: left;
+    border: none;
+    outline: none;
+    background-color: #94D196;
+    color: lightcyan;
+    font-size: 17px;
+	 /* display: inline-block;
     background-color: pink;
     color: white;
-    /* float: left; */
+    float: left;
     border: none;
     outline: 5px;
     cursor: pointer;
     transition: 0.3s;
 	font-size: 17px;
-	top: 50%;
+	top: 50%;*/
   }
-  .active {
-	padding: 24px 26px;
-	display:inline-block;
-	height: 100%;
-	top: 10px;
-	left: 0px;
-	background-color: pink;
+  #active {
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 45px;
+    display: block;
+    padding: 0px 20px;
+    position: relative;
+    float: left;
+    border: none;
+    outline: none;
+    font-size: 17px;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: #94D196;
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
-
   }
+/*
+.lr::before {
+	content: '';
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  /*border-radius: 50%;
+  background-color: pink;
+}
+.lr::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top:25px;
+  border-radius: 50%;
+  background-color: pink;
+}

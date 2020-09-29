@@ -7,31 +7,30 @@
     <link href="navbar.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-
+<div class="border"></div>
     <div class="tab">
-        <div class="tabs">
-            <button class="tablinks" onclick="">Ouvrage de réference</button>
+        <div>
+            <button class="tabs" onclick="window.location.href='mainWindow.html'">Ouvrage de réference</button>
         </div>
-        <div class="tabs">
-            <button class="active" onclick="">Document officiel</button>
+        <div class="lr">    
+            <div class="left"></div>
+            <button class="tabs" onclick="">Document officiel</button>
+            <div class="right"></div>
         </div>
-        <div class="tabs">
-            <button class="tablinks" onclick="">Livres</button>
+        <div>
+            <button class="tabs" onclick="">Livres</button>
         </div>
-        <div class="tabs">
-            <button class="tablinks" onclick="">Articles Périodiques</button>
+        <div>
+            <button id="active" onclick="">Articles Périodiques</button>
         </div>
-        <div class="tabs">
-            <button class="tablinks" onclick="">Internet</button> 
+        <div>
+            <button class="tabs" onclick="">Internet</button> 
         </div>
-        <div class="tabs">
-            <button class="tablinks" onclick="">En développment</button> 
+        <div>
+            <button class="tabs" onclick="">En développment</button> 
         </div>
     </div>
 
-        <div>
-
-        </div>
 
     <script>
 
@@ -39,6 +38,22 @@
         //https://codepen.io/piyushpd/pen/rNBJZWB
 
         //border-top-right-radius: 15px;
+
+        /*
+<div class="tab">
+      <button class="active" onclick="" id="defaultOpen">Ouvrage de réference</button>
+      <button class="tablinks" onclick="window.location.href='quill.html'">Document officiel</button>
+      <button class="tablinks" onclick="window.location.href='abc.html'">Livres</button>
+      <button class="tablinks" onclick="window.location.href='navbar.html'">Articles Périodiques</button>
+      <button class="tablinks" onclick="">Internet</button> 
+      <button class="tablinks" onclick="window.location.href='editor2.html'">En développment</button> 
+    </div>
+    */
+
+
+
+
+
     </script>
 </body>
 </html>
