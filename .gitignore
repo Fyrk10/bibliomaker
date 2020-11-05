@@ -117,3 +117,6 @@ dist
 
 # build directory
 release-builds/
+
+# extra
+todo.txt

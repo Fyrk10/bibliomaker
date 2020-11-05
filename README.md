@@ -10,7 +10,7 @@ https://www.npmjs.com/get-npm (intall nodejs and npm)
 
 Clone the github repos:
 ```bash
-git clone https://github.com/Dyke10/bibliomaker.git
+git clone https://github.com/Fyrk10/bibliomaker.git
 ```
 
 Install dependencies:
@@ -39,7 +39,7 @@ https://www.npmjs.com/get-npm (intallez nodejs et npm)
 
 Clonez le dépôt github:
 ```bash
-git clone https://github.com/Dyke10/bibliomaker.git
+git clone https://github.com/Fyrk10/bibliomaker.git
 ```
 
 Installez les dépendances:
