@@ -25,7 +25,7 @@ app.on('ready', function(){
     );
     //html dans la fenetre
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'mainWindow.html'),
+        pathname: path.join(__dirname, 'index.html'),
         protocol:'file',
         slashes: true
     }));
@@ -82,7 +82,7 @@ function createinformation(){
     );
 
     information.loadURL(url.format({
-        pathname: path.join(__dirname, 'information.html'),
+        pathname: path.join(__dirname, 'html/information.html'),
         protocol:'file',
         slashes: true
     }));
@@ -105,7 +105,7 @@ function createpreferences(){
     );
         
     preferences.loadURL(url.format({
-        pathname: path.join(__dirname, 'preferences.html'),
+        pathname: path.join(__dirname, 'html/preferences.html'),
         protocol:'file',
         slashes: true
     }));
@@ -120,12 +120,6 @@ const mainMenuTemplate = [
     {
         label:'Paramètres',
         submenu:[
-            {
-                label: 'Ajouter',
-                click(){
-                    createAddWindow();
-                }
-            },
             {
                 label: 'Préférences',
                 click(){
